@@ -46,7 +46,7 @@ Este repositorio contiene la estructura inicial y limpia de un proyecto Django. 
    ```
 
 7. **Acceder desde el navegador:**
-   [http://127.0.0](http://127.0.0)
+   [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
 
 ## Aplicaciones Incluidas
 * **posts**: Aplicación principal encargada de la futura gestión de publicaciones del blog.
