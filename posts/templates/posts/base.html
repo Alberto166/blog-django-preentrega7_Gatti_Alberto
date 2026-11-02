@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Blog Django</title>
+    <!-- Vinculamos el archivo CSS usando las etiquetas de Django -->
+    <link rel="stylesheet" href="{% static 'posts/css/estilos.css' %}">
+</head>
+<body>
+
+    <!-- Menú de Navegación común para todo el sitio -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="{% url 'inicio' %}" class="logo">🚀 BlogDjango</a>
+            <ul class="nav-links">
+                <li><a href="{% url 'inicio' %}">Inicio</a></li>
+                <li><a href="{% url 'acerca' %}">Acerca de</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contenedor Principal donde se inyectarán las páginas hijas -->
+    <main class="main-content">
+        {% block content %}
+        <!-- El contenido de inicio.html y acerca.html se meterá acá -->
+        {% endblock %}
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 - Desarrollado por Alberto Gatti</p>
+    </footer>
+
+</body>
+</html>
