@@ -1,9 +1,13 @@
 # Blog Django
 
-Proyecto base de un blog web desarrollado con Django para la Preentrega 7.
+Proyecto de un blog web desarrollado con Django para la Preentrega 8.
 
 ## Descripción
-Este repositorio contiene la estructura inicial y limpia de un proyecto Django. Incluye la configuración base del proyecto, traducción al español, zona horaria adaptada y una aplicación inicial llamada `posts` preparada para futuros desarrollos.
+Este repositorio contiene la estructura visual inicial del blog. A partir de la base anterior, se implementó el flujo completo de Django (Ruta -> Vista -> Template -> Estático) incorporando una plantilla base reutilizable (`base.html`), herencia de plantillas, un menú de navegación funcional y diseño con estilos CSS personalizados.
+
+## Páginas Incluidas
+* **Inicio**: Pantalla de bienvenida con la descripción general del proyecto.
+* **Acerca de**: Sección interactiva con información del autor y el propósito del sitio.
 
 ## Requisitos Previos
 * Python 3.x instalado.
@@ -46,7 +50,4 @@ Este repositorio contiene la estructura inicial y limpia de un proyecto Django. 
    ```
 
 7. **Acceder desde el navegador:**
-   [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
-
-## Aplicaciones Incluidas
-* **posts**: Aplicación principal encargada de la futura gestión de publicaciones del blog.
+   [http://127.0.0](http://127.0.0)
