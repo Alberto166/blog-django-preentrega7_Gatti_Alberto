@@ -50,4 +50,4 @@ Este repositorio contiene la estructura visual inicial del blog. A partir de la 
    ```
 
 7. **Acceder desde el navegador:**
-   [http://127.0.0](http://127.0.0)
+   [http://127.0.0.1:8000](http://127.0.0.1:8000)
