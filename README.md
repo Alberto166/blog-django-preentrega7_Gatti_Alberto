@@ -1,6 +1,6 @@
 # Blog Django
 
-Proyecto de un blog web desarrollado con Django para la Preentrega 8 y Preentrega 9 y preentrega 10
+Proyecto de un blog web desarrollado con Django para la Preentrega 8 y Preentrega 9 y preentrega 10 y preentrega 11
 
 ## Descripción
 Este repositorio contiene la estructura visual inicial del blog. A partir de la base anterior, se implementó el flujo completo de Django (Ruta -> Vista -> Template -> Estático) incorporando una plantilla base reutilizable (`base.html`), herencia de plantillas, un menú de navegación funcional y diseño con estilos CSS personalizados.
@@ -84,7 +84,7 @@ Este módulo añade un sistema de gestión CRUD dinámico que permite administra
 * Se añadió una prueba en `posts/tests.py` que valida el correcto filtrado del ORM para publicaciones en estado 'publicado'.
 * Se puede ejecutar mediante el comando: `python manage.py test`
 
-##  Módulo 11: Autenticación, Usuarios y Perfiles
+##  Preentrega  11: Autenticación, Usuarios y Perfiles
 
 En esta preentrega se incorporó un sistema de gestión de usuarios y perfiles al Blog.
 
