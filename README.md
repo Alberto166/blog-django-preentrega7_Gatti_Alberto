@@ -1,6 +1,6 @@
 # Blog Django
 
-Proyecto de un blog web desarrollado con Django para la Preentrega 8.
+Proyecto de un blog web desarrollado con Django para la Preentrega 8 y Preentrega 9
 
 ## Descripción
 Este repositorio contiene la estructura visual inicial del blog. A partir de la base anterior, se implementó el flujo completo de Django (Ruta -> Vista -> Template -> Estático) incorporando una plantilla base reutilizable (`base.html`), herencia de plantillas, un menú de navegación funcional y diseño con estilos CSS personalizados.
@@ -51,3 +51,14 @@ Este repositorio contiene la estructura visual inicial del blog. A partir de la 
 
 7. **Acceder desde el navegador:**
    [http://127.0.0.1:8000](http://127.0.0.1:8000)
+
+## Preentrega 9: Modelos y Admin configurados
+
+En esta entrega se conectó la aplicación con una base de datos SQLite utilizando el ORM de Django, permitiendo la carga dinámica de publicaciones.
+
+### Nuevas Funcionalidades
+* **Modelo Post:** Definido en `posts/models.py` con campos para título, contenido, autor, fecha de creación y estado (Borrador/Publicado/Archivado).
+* **Panel de Administración:** Modelo registrado en `posts/admin.py` con columnas personalizadas para una mejor gestión de los contenidos.
+* **ORM & Plantillas Dinámicas:** La vista `lista_posts` filtra las publicaciones en estado "Publicado" y las renderiza dinámicamente mediante bucles en el HTML.
+
+
