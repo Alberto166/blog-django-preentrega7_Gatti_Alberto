@@ -6,6 +6,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('posts.urls')),
+    path('accounts/', include('accounts.urls')),
 ]
 
 # Esto le permite a Django servir las imágenes cargadas durante el desarrollo

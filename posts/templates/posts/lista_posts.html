@@ -1,6 +1,6 @@
 {% extends "posts/base.html" %}
 
-{% block contenido %}
+{% block content %}
 <div class="container" style="padding: 20px; max-width: 800px; margin: 0 auto;">
     
     <!-- NUEVO: Botón para ir al formulario de creación -->
@@ -11,17 +11,26 @@
 
     <!-- Iniciamos el bucle para recorrer cada publicación de la base de datos -->
     {% for post in posts %}
-        <article class="post-item" style="border-bottom: 1px solid #ccc; margin-bottom: 25px; padding-bottom: 20px;">
+               <article class="post-item" style="border-bottom: 1px solid #ccc; margin-bottom: 25px; padding-bottom: 20px;">
             <h2 style="color: #333; margin-bottom: 5px;">{{ post.titulo }}</h2>
+            
+            {% if post.imagen %}
+                <div style="margin-top: 10px; margin-bottom: 10px;">
+                    <img src="{{ post.imagen.url }}" alt="{{ post.titulo }}" style="max-width: 200px; height: auto; border-radius: 4px; border: 1px solid #ddd;">
+                </div>
+            {% endif %}
+
             <p style="margin-bottom: 10px;">
                 <small style="color: #666;">
                     Por: <strong>{{ post.autor }}</strong> | Fecha: {{ post.fecha_creacion|date:"d/m/Y" }}
                 </small>
             </p>
-            <p style="line-height: 1.6; color: #444;">{{ post.contenido|truncatewords:30 }}</p>
+
             
             <!-- NUEVO: Botón para acceder al detalle de este post individual -->
-            <a href="{% url 'detalle_post' post.pk %}" style="padding: 6px 12px; background-color: #17a2b8; color: white; text-decoration: none; border-radius: 4px; display: inline-block; font-size: 0.9em; font-family: sans-serif;">Ver detalle completo</a>
+         <a href="/posts/{{ forloop.counter }}/" style="padding: 6px 12px; background-color: #17a2b8; color: white; text-decoration: none; border-radius: 4px;">Ver detalle completo</a>
+
+
         </article>
     {% empty %}
         <!-- Mensaje de respaldo si no hay posts cargados o publicados -->

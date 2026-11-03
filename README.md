@@ -83,3 +83,21 @@ Este módulo añade un sistema de gestión CRUD dinámico que permite administra
 ###  Pruebas Automatizadas (Tests)
 * Se añadió una prueba en `posts/tests.py` que valida el correcto filtrado del ORM para publicaciones en estado 'publicado'.
 * Se puede ejecutar mediante el comando: `python manage.py test`
+
+##  Módulo 11: Autenticación, Usuarios y Perfiles
+
+En esta preentrega se incorporó un sistema de gestión de usuarios y perfiles al Blog.
+
+###  Funcionalidades Incluidas:
+* **Registro de Usuarios:** Formulario personalizado basado en `UserCreationForm` para dar de alta nuevas cuentas.
+* **Autenticación Completa:** Vistas integradas para el Inicio de Sesión (`LoginView`) y Cierre de Sesión (`LogoutView`).
+* **Modelo Perfil:** Extensión de datos de usuario mediante una relación `OneToOneField` con campos para Biografía, Sitio Web y Avatar (Imagen).
+* **Protección de Rutas:** Implementación del decorador `@login_required` para bloquear la creación, edición y eliminación de posts a usuarios que no hayan iniciado sesión.
+* **Navegación Dinámica:** Menú adaptativo en `base.html` que varía según el estado de autenticación del usuario.
+
+###  Cómo ejecutar las Migraciones:
+Si es la primera vez que clonás el proyecto o querés impactar los cambios del perfil, ejecutá:
+```shell
+python manage.py makemigrations
+python manage.py migrate
+```

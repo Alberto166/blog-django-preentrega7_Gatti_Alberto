@@ -1,0 +1,16 @@
+{% extends 'posts/base.html' %}
+
+{% block content %}
+<div style="max-width: 500px; margin: 20px auto; padding: 20px; border: 1px solid #ccc; border-radius: 8px;">
+    <h2>Editar Perfil</h2>
+    <!-- Es fundamental mantener el enctype="multipart/form-data" para permitir subida de archivos (Avatares) -->
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div style="margin-top: 20px;">
+            <button type="submit" style="padding: 8px 15px; background-color: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer;">Guardar Cambios</button>
+            <a href="{% url 'ver_perfil' %}" style="margin-left: 10px; text-decoration: none; color: #6c757d;">Cancelar</a>
+        </div>
+    </form>
+</div>
+{% endblock %}

@@ -11,16 +11,31 @@
 <body>
 
     <!-- Menú de Navegación común para todo el sitio -->
-    <nav class="navbar">
+              <nav class="navbar">
         <div class="nav-container">
-            <a href="{% url 'inicio' %}" class="logo">🚀 BlogDjango</a>
-                        <ul class="nav-links">
-                <li><a href="{% url 'inicio' %}">Inicio</a></li>
+            <a href="{% url 'lista_posts' %}" class="logo">BlogDjango</a>
+            <ul class="nav-links">
                 <li><a href="{% url 'lista_posts' %}">Publicaciones</a></li>
-                <li><a href="{% url 'acerca' %}">Acerca de</a></li>
+                
+                {% if user.is_authenticated %}
+                    <li><span style="color: #61afef; margin-right: 10px;">Hola, {{ user.username }}</span></li>
+                    <li><a href="{% url 'crear_post' %}" style="color: #98c379;">Crear Post</a></li>
+                    <li><a href="{% url 'ver_perfil' %}">Mi Perfil</a></li>
+                    <li>
+                        <form action="{% url 'logout' %}" method="POST" style="display: inline; margin: 0; padding: 0;">
+                            {% csrf_token %}
+                            <button type="submit" style="background: none; border: none; color: #e06c75; cursor: pointer; font-family: inherit; font-size: inherit; padding: 0;">Cerrar Sesión</button>
+                        </form>
+                    </li>
+                {% else %}
+                    <li><a href="{% url 'login' %}">Iniciar Sesión</a></li>
+                    <li><a href="{% url 'registro' %}" style="color: #98c379; font-weight: bold;">Registrarse</a></li>
+                {% endif %}
             </ul>
         </div>
     </nav>
+
+
 
     <!-- Contenedor Principal donde se inyectarán las páginas hijas -->
     <main class="main-content">
@@ -35,3 +50,4 @@
 
 </body>
 </html>
+
