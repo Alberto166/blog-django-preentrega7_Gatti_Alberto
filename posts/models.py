@@ -14,6 +14,9 @@ class Post(models.Model):
     fecha_creacion = models.DateTimeField(auto_now_add=True) # Se guarda sola al crear el post
     estado = models.CharField(max_length=20, choices=ESTADO_CHOICES, default='borrador')
 
+    # NUEVO CAMPO:
+    imagen = models.ImageField(upload_to='posts/', null=True, blank=True)
+
     # Método para que en el panel admin se vea el título del post en vez de "Post object (1)"
     def __str__(self):
         return self.titulo

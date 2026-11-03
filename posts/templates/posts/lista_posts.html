@@ -1,19 +1,27 @@
 {% extends "posts/base.html" %}
 
-{% block content %}
+{% block contenido %}
 <div class="container" style="padding: 20px; max-width: 800px; margin: 0 auto;">
-    <h1 style="margin-bottom: 20px;">Publicaciones del Blog</h1>
+    
+    <!-- NUEVO: Botón para ir al formulario de creación -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+        <h1 style="margin: 0; margin-bottom: 20px;">Publicaciones del Blog</h1>
+        <a href="{% url 'crear_post' %}" style="padding: 10px 15px; background-color: #28a745; color: white; text-decoration: none; border-radius: 4px; font-weight: bold; font-family: sans-serif;">+ Crear Nuevo Post</a>
+    </div>
 
     <!-- Iniciamos el bucle para recorrer cada publicación de la base de datos -->
     {% for post in posts %}
-        <article class="post-item" style="border-bottom: 1px solid #ccc; margin-bottom: 25px; padding-bottom: 15px;">
+        <article class="post-item" style="border-bottom: 1px solid #ccc; margin-bottom: 25px; padding-bottom: 20px;">
             <h2 style="color: #333; margin-bottom: 5px;">{{ post.titulo }}</h2>
             <p style="margin-bottom: 10px;">
                 <small style="color: #666;">
-                    Por: <strong>{{ post.autor }}</strong> | Fecha: {{ post.fecha_creacion|date:"d/m/Y H:i" }}
+                    Por: <strong>{{ post.autor }}</strong> | Fecha: {{ post.fecha_creacion|date:"d/m/Y" }}
                 </small>
             </p>
-            <p style="line-height: 1.6; color: #444;">{{ post.contenido }}</p>
+            <p style="line-height: 1.6; color: #444;">{{ post.contenido|truncatewords:30 }}</p>
+            
+            <!-- NUEVO: Botón para acceder al detalle de este post individual -->
+            <a href="{% url 'detalle_post' post.pk %}" style="padding: 6px 12px; background-color: #17a2b8; color: white; text-decoration: none; border-radius: 4px; display: inline-block; font-size: 0.9em; font-family: sans-serif;">Ver detalle completo</a>
         </article>
     {% empty %}
         <!-- Mensaje de respaldo si no hay posts cargados o publicados -->
@@ -21,3 +29,4 @@
     {% endfor %}
 </div>
 {% endblock %}
+
